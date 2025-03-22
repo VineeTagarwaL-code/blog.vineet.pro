@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import Script from "next/script";
+
+import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
 import NextTopLoader from "nextjs-toploader";
 import Provider from "@/lib/Provider";
-import Navbar from "@/components/Navbar";
+import Script from "next/script";
+import { ThemeProvider } from "@/components/theme-provider";
+import localFont from "next/font/local";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -64,7 +65,7 @@ export default function RootLayout({
         </ThemeProvider>
         <Script
           defer
-          src="https://unmani-vercel.vercel.app/script.js"
+          src="https://stats.vineet.pro/script.js"
           data-website-id="8606e195-da59-401f-bde2-8b6837618dc1"
         ></Script>
       </body>
