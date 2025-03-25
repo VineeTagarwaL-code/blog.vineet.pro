@@ -1,7 +1,7 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
 
 import { Activity, ActivityCalendar } from "react-activity-calendar";
+import { useCallback, useEffect, useState } from "react";
 
 type GithubGraphProps = {
   username: string;
@@ -37,7 +37,7 @@ export const GithubGraph = ({
   };
 
   return (
-    <div className="mt-16">
+    <>
       <ActivityCalendar
         data={contribution}
         maxLevel={4}
@@ -45,16 +45,20 @@ export const GithubGraph = ({
         loading={loading}
         labels={label}
         theme={{
-          light: colorPallete
-            ? colorPallete
-            : ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
+          dark: colorPallete ?? [
+            "#ebedf0",
+            "#9be9a8",
+            "#40c463",
+            "#30a14e",
+            "#216e39",
+          ],
         }}
       />
-    </div>
+    </>
   );
 };
 async function fetchContributionData(username: string): Promise<Activity[]> {
-  const response = await fetch(`https://github.vineet.tech/api/${username}`);
+  const response = await fetch(`https://github.vineet.pro/api/${username}`);
   const responseBody = await response.json();
 
   if (!response.ok) {
